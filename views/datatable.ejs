@@ -1,0 +1,27 @@
+<h3 >Course List</h3>
+</div>
+<table border="1">
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Course Id</th>
+<th>Course Duration(Hrs)</th>
+<th>Course Fee(USD)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+    <% items.forEach(function(items){%> 
+<tr>
+<td><%=items.courseName%></td>
+<td><%=items.courseId%></td>
+<td><%=items.courseDuration%></td>
+<td><%=items.courseFee%></td>
+<td>
+<a href="/update/<%=items._id%>"> Edit </a>
+<a href="/delete/<%=items._id%>" onclick="return confirm('Are you sure to delete this record ?');"> Delete </a>
+</td>
+</tr>
+<%})%>
+</tbody>
+</table>
